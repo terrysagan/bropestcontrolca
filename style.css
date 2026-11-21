@@ -131,6 +131,8 @@ line-height: 1.8; }
     }
 
 /* -------END top banner-------------------*/
+
+/*------------ NAV START-------------------*/
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -191,14 +193,14 @@ margin-left: 20px;
   transition: 0.3s;
 }
 /* Responsive - when screen is less than 768px */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background-color: #333;
     position: absolute;
-    top: 100px;
+    top: 140px;
     left: 0;
    width: 300px;
 align-items: start;
@@ -427,7 +429,7 @@ padding-right: 20px;
 } 
 .text-title h3{   
    text-align: center;
-} 
+}   
 .text-body{
   padding-left: 20px;
   padding-right: 20px;
@@ -694,18 +696,151 @@ padding:5px 10px 5px 10px;
   }
 }
 
-
-
-
-
-
-@media screen and (max-width: 620px) {
- 
+@media screen and (max-width: 620px) { 
   .headline-subcontainer {
     width: 100%;
   }
 }
 /*==============  END CONTACT HEADING  =============*/
+
+  /*===================== TYPES OF PESTS  ==================   */
+.spsection{
+  place-items: center;
+  justify-items: center;
+  }   
+.pestheading {
+  text-align: center;  
+  margin-bottom:10px;
+  } 
+.pestheading h3{
+  text-align: center;
+  /*font-size: 30px;*/
+ padding-left: 30px;
+  padding-right: 30px;
+  margin: 0;
+}
+.pestheading p{
+  text-align: center;
+  /*font-size: 16px;*/
+ padding-left: 30px;
+  padding-right: 30px;
+}
+.pestimage{
+width:100%;
+object-fit: contain; 
+max-width: 200px;
+padding-top: 10px;
+padding-bottom: 12px;
+}
+.pestheader{
+width: 20%;      /* Or any width you prefer */
+  max-width: 300px; /* Optional: sets a cap on size */
+}
+.pestheader img{
+width: 20%;      /* Or any width you prefer */
+  max-width: 300px; /* Optional: sets a cap on size */
+}
+.pest-subheading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;  
+}
+.pest {
+  width: 33%;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 50px; 
+  padding-left: 6px;
+  padding-right: 6px;
+  /*transition: 0.3s;*/  
+    border: 1px solid black; 
+}
+.pest p{
+text-align: justify;
+}
+.pest ol li{
+text-align: left;
+line-height: 1.8;
+font-weight: 600;
+}
+.pest-header {
+  text-align: center;
+  padding:2px 10px;
+  /*background: linear-gradient(to right, #ff416c, #ff4b2b);*/
+  color: #fff;  
+}
+.pest-header img{
+   max-width: 100%;  /* Ensures it doesn't overflow the div */
+  height: auto;     /* Maintains aspect ratio */
+  display: block;   /* Removes unwanted whitespace at the bottom */  
+}
+.pestimage {  
+  max-height: 150px;
+}
+.pest-body {
+  padding: 0px 5px;
+  text-align: center; 
+}
+.pest-body h4{ 
+  margin-top:5px;
+  margin-bottom: 0px;
+  /*font-size: 26px;*/
+}
+.pest-body .btn {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  margin-top: 20px;
+   margin-bottom: 10px;
+  text-decoration: none;
+  padding: 5px 5px;
+  border-radius: 10px;
+  /*font-size: 14px;*/
+}
+/*
+.pest:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}*/
+@media screen and (max-width: 1000px) {
+  .pest {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 860px) {
+  .pest {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+  .pestheading {
+    padding-left: 18px;
+    text-align: center;
+    }    
+  .pestheading h3 {    
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }  
+  .pest {
+    width: 80%;
+  }
+
+  .pest P{
+    text-align: left;
+    
+  }
+
+
+}
+ /*=====================  END TYPES OF PESTS  ==================   */
+
+
 /*=============== PEST ICONS    ==================*/
 .pest-grid-heading{
   text-align: center;  
@@ -856,6 +991,186 @@ border: 2px solid black;
 }
 }
 /* ============ END   ASSOCIATION ============*/
+/*===================== CONTACT FORM ==================   */
+/*---------contact heading start--------------*/  
+.heading-contact {
+  text-align: center;  
+  margin-bottom:0px; 
+  } 
+.heading-contact h3{
+  text-align: center; 
+ padding-left: 30px;
+  padding-right: 30px;
+  margin: 0;
+}
+.heading-contact p{
+  text-align: center; 
+ padding-left: 30px;
+  padding-right: 30px;
+}
+@media screen and (max-width: 620px) { 
+  .heading-contact {
+    padding-left: 18px;
+    text-align: center;
+    }    
+  .heading-contact h3 {    
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  } 
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+.form_wrapper {
+	background:#fff;
+	width:740px;
+	max-width:100%;
+	box-sizing:border-box;
+	padding: 0px 15px 35px 15px;  
+	margin:5% auto 0;
+	position:relative;
+	z-index:1;
+	-webkit-box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);
+	-moz-box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);
+	box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);
+
+}
+.form_container {
+	padding:15px;
+	border:2px dashed black;
+}
+.form_wrapper h2 {
+	font-size:1.5em;
+	line-height:1.5em;
+	margin:0;
+}
+.form_wrapper .title_container {
+	text-align:center;
+	margin:-15px -15px 15px;
+	padding:15px 0;
+	border-bottom:1px dashed #ccc;
+}
+.form_wrapper h3 {
+	font-size:1.1em;
+	font-weight:normal;
+	line-height:1.5em;
+	margin:0;
+}
+.form_wrapper .row {
+	margin:10px -15px;
+}
+.form_wrapper .row > div {
+	padding:0 15px;
+	box-sizing:border-box;
+}
+.form_wrapper .col_half {
+	width:50%;
+	float:left;
+}
+.form_wrapper label {
+	display:block;
+	margin:0 0 5px;
+}
+.form_wrapper .input_field, .form_wrapper .textarea_field {
+	position:relative;
+}
+.form_wrapper .input_field > span, .form_wrapper .textarea_field > span {
+	position:absolute;
+	left:0;
+	top:0;
+	color:#333;
+	height:100%;
+	border-right:1px solid #ccc;
+	text-align:center;
+	width:30px;
+}
+.form_wrapper .textarea_field > span {
+	border-bottom:1px solid #ccc;
+	max-height:35px;
+}
+.form_wrapper .input_field > span > i, .form_wrapper .textarea_field > span > i {
+	padding-top:12px;
+}
+.form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="tel"], textarea {
+	width:100%;
+	padding:10px 10px 10px 35px;
+	border:1px solid black;
+	box-sizing:border-box;
+	outline:none;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	transition: all 0.30s ease-in-out;
+}
+.form_wrapper textarea {
+	height:8em;
+}
+.form_wrapper input[type="text"]:focus, .form_wrapper input[type="email"]:focus, .form_wrapper input[type="tel"]:focus, textarea:focus {
+	-webkit-box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);
+	-moz-box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);
+	box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);
+	border:1px solid #f5ba1a;
+}
+.form_wrapper input[type="submit"] {
+	background: green;
+	height:50px;
+	line-height:50px;
+	width:100%;
+	border:none;
+	outline:none;
+	cursor:pointer;
+	color:#fff;
+	font-size:1.2em;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	transition: all 0.30s ease-in-out;
+}
+.form_wrapper input[type="submit"]:hover, .form_wrapper input[type="submit"]:focus {
+	background:black;
+}
+.credit{
+	position:relative;
+	z-index:1;
+	text-align:center;
+	padding:15px;
+	color:#f5ba1a;	
+}
+.credit a{
+	color:#daa106;	
+}
+.input_field img{
+  width: 100%;
+  align-items: center;
+  height: auto;
+  max-width: 24px;
+  height: auto;
+  margin: 0;
+  padding-top: 6px;
+
+}
+@media (max-width: 600px) {
+.form_wrapper .col_half {
+	width:100%;
+	float:none;   
+}
+.form_wrapper {
+	padding: 0 20px 0 20px;
+}
+
+.form_container {
+	padding: 0 20px 0 20px;
+}
+.form_wrapper label {
+	margin:10px 0;
+}
+}
+ /*=====================  END CONTACT ==================   */
 /*================FOTTER=====================*/
 footer{
   background-color:#153010;
