@@ -1,4 +1,4 @@
-﻿
+
 * {
   box-sizing: border-box;
 }
@@ -82,61 +82,89 @@ line-height: 1.8; }
 }
 
 /*=========== START NAV   ============================*/
-/*-------phone heading----------------*/
+/*-------------Top banner  ----------------------*/
+ .top-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 15%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      height: auto;  
+      width:100%;
+     
+    }
+    /* Logo Styling 
+    .logo2 img {
+      height: 50px;
+      width: auto;
+      display: block;
+        }
+*/
+    /* Contact Info Container */
+    .contact-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;      
+    }
+    .contact-info a {
+      text-decoration: none;
+      color: #333333;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .contact-info a:hover {
+      color:#0066cc;
+    }
 
-.topheading {
-  display:flex;
-  align-items: center;
-  width: 100%;
-  height:50px; 
-  padding-top: 10px;
-  /*background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);*/  
-}
-.topheading-box{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-   flex:1;  
-   text-align: center;
-   padding:0;  
-}
-.topheading-box a{
-    text-decoration: none;
-}
-.topheading-box h3{justify-content: center;
-    align-items:center;    
-}
-@media screen (max-width:600px){
-    .toheading{
-        flex-dirction:row;
-        height:250px;
-    }    
-}
-/* -------END phone heading*/
+     /* Mobile Responsiveness */
+    @media (max-width: 740px) {
+      .top-banner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;   
+      }
+      .contact-info {
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 0px;
+      }     
+    }
 
+/* -------END top banner-------------------*/
+
+/*------------ NAV START-------------------*/
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color:#153010;
   padding: 10px 20px;
 }
  .logo { 
-  width: 20%;      /* Or any width you prefer */
-  max-width: 130px; /* Optional: sets a cap on size */
+  width: 30%;      /* Or any width you prefer */
+  max-width: 150px;/* Optional: sets a cap on size */
+margin-left: 60px; 
+}  
+@media (max-width: 768px) {  
+ .logo {   
+margin-left: 20px; 
+}  
 }
 .logo img{  
   max-width: 100%;  /* Ensures it doesn't overflow the div */
   height: auto;     /* Maintains aspect ratio */
   display: block;
-  border-radius: 3%;   /* Removes unwanted whitespace at the bottom */
+  border-radius: 1%;   /* Removes unwanted whitespace at the bottom */
 }
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
-}
+  gap: 40px;
+  margin-right: 60px;
+  width: 80%;
 
+}
 .nav-links li:hover{
   background-color: red;
   color:white;
@@ -148,16 +176,16 @@ line-height: 1.8; }
   color: white;
   text-decoration: none;
   font-size: 1.1em;
-  padding: 8px; 
+  padding: 0; 
+ margin: 5px;
+ font-size: 14px;
 }
-
 /* Hamburger menu styles */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
-
 .bar {
   width: 25px;
   height: 3px;
@@ -165,33 +193,30 @@ line-height: 1.8; }
   margin: 4px 0;
   transition: 0.3s;
 }
-
 /* Responsive - when screen is less than 768px */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background-color: #333;
     position: absolute;
-    top: 60px;
+    top: 140px;
     left: 0;
+   width: 300px;
+align-items: start;
   }
-
   .nav-links li {
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
   }
-
   .nav-links li a {
-    font-size: 1.3em;
+    font-size: 14px;  
   }
-
   .hamburger {
     display: flex;
   }
 }
-
 /* Active state of the menu */
 .nav-links.active {
   display: flex;
