@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
 }
+
   html
   {width: 100%;
   height: 100%;
@@ -11,32 +12,32 @@
     font-size: 16px;
   }
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;  
+ font-family: system-ui, -apple-system, sans-serif;
   margin: 0px;
   padding: 0px;
+  min-height: 100vh; 
   box-sizing: border-box; 
-  background-color: white;
+
+      padding: 1.25rem; 
+
 }
-section {
+.main{
+  max-width: 1240px; /* Limits total width */
+  margin: 0 auto;    /* Centers the content horizontally */
+  width: 100%;  
+}
+section{
   max-width: 1260px; /* Limits total width */
   margin: 0 auto;    /* Centers the content horizontally */
   width: 100%; 
-  padding: 0 30px 0 30px;
-   
+     
 }
- @media only screen and (max-width: 1024px) {
-section {
-  padding-left: 20px;
-  padding-right: 20px;
+@media screen (max-width:768px){
+    section{
+        padding: 0px 20px 0px 20px; 
+    }    
 }
-}
- @media only screen and (max-width: 761px) {
-section {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-}
-h1 { font-size: 48px;
+h1 { font-size: 42px;
   font-weight: 900; 
 line-height: 2;}
   h2 { font-size: 36px;
@@ -47,28 +48,32 @@ line-height: 1.8; }
   h4 { font-size: 24px;
     font-weight:600; }
   h5 { font-size: 20px;
-    font-weight:550; }    
+    font-weight:450; }    
   h6 { font-size: 18px;
     font-weight:300; }
   p { font-size: 16px; 
-  line-height: 1.6;}    
+  line-height: 1.6;}
+    
   @media only screen and (max-width: 910px) {
     h1 { font-size: 38px; }
     h2 { font-size: 32px; }
     h3 { font-size: 28px; }
     h4 { font-size: 24px; }
     h5 { font-size: 20px; }
-    }    
+    }
+    
     @media only screen and (max-width: 600px) {
       h1 { font-size: 32px; }
       h2 { font-size: 26px; }
       h3 { font-size: 24px; }
       h4 { font-size: 22px; }
-      h5 { font-size: 18px; } 
-      }  
+      h5 { font-size: 18px; }
+      }
+  
       a:link {
         text-decoration: none;
-      }  
+      }
+  
 .btn a{
 	display: block;
 	width: 180px;
@@ -80,8 +85,7 @@ line-height: 1.8; }
 	text-align: center;
 }
 
-/*=========== START NAV   ============================*/
-/*-------------Top banner  ----------------------*/
+/*=================TOP BANNER ON HEADER  ----------------------*/
  .top-banner {
       display: flex;
       justify-content: space-between;
@@ -93,13 +97,6 @@ line-height: 1.8; }
       width:100%;
      
     }
-    /* Logo Styling 
-    .logo2 img {
-      height: 50px;
-      width: auto;
-      display: block;
-        }
-*/
     /* Contact Info Container */
     .contact-info {
       display: flex;
@@ -110,12 +107,15 @@ line-height: 1.8; }
       text-decoration: none;
       color: #333333;
       font-weight: bold;
-      font-size: 15px;
+      font-size: 15px;    
+      transition: 0.2s ease-out all;
     }
     .contact-info a:hover {
-      color:#0066cc;
+      cursor: pointer;
+      transform: scale(1.05);
+       transition: all 1s ease;
+       color:red;
     }
-
      /* Mobile Responsiveness */
     @media (max-width: 740px) {
       .top-banner {
@@ -129,18 +129,10 @@ line-height: 1.8; }
         padding-top: 0px;
       }     
     }
-
-/* -------END top banner-------------------*/
-
-/*------------ NAV START-------------------*/
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color:#153010;
-  padding: 10px 20px;
-}
- .logo { 
+/* -------END TOP BANNER ON HEADER-------------------*/
+/*=========== START HEADER (menu)  ============================*/
+/*------------Navbar logo ------*/
+.logo { 
   width: 30%;      /* Or any width you prefer */
   max-width: 150px;/* Optional: sets a cap on size */
 margin-left: 60px; 
@@ -156,170 +148,232 @@ margin-left: 20px;
   display: block;
   border-radius: 1%;   /* Removes unwanted whitespace at the bottom */
 }
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  margin-right: 60px;
-  width: 80%;
+/*------------End Navbar logo ------*/
 
-}
-.nav-links li:hover{
-  background-color: red;
-  color:white;
-  cursor: pointer;
-  transform: scale(1.05);
-  transition: all 1s ease;
-}
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1em;
-  padding: 0; 
- margin: 5px;
- font-size: 14px;
-}
-/* Hamburger menu styles */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-/* Responsive - when screen is less than 768px */
-@media (max-width: 968px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #333;
-    position: absolute;
-    top: 140px;
-    left: 0;
-   width: 300px;
-align-items: start;
-  }
-  .nav-links li {
-    text-align: center;
-    padding: 10px 0;
-  }
-  .nav-links li a {
-    font-size: 14px;  
-  }
-  .hamburger {
-    display: flex;
-  }
-}
-/* Active state of the menu */
-.nav-links.active {
-  display: flex;
-}
- /*==================   EBD NAV  ================*/
- /*======================TOP BANNER===============*/
-.topbanner-text {
-  display: flex;
+    /* Navbar Container */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:#153010;
+      color: #fff;
+      padding: 1rem 1.5rem;
+      position: relative;
+    }
+/*
+    .logo {
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }*/
+
+    /* Hide the checkbox input */
+    .menu-toggle {
+      display: none;
+    }
+
+    /* Hamburger Icon (Hidden on Desktop) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 3px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Navigation Links (Desktop Horizontal Layout) */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    
+      width: 50%;
+    }
+
+    .nav-links a {
+      color: #f8fafc;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    /* Sub-dropdown inside the menu */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #334155;
+      list-style: none;
+      min-width: 160px;
+      border-radius: 4px;
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: 14px;
+     letter-spacing: .05rem;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #475569;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Mobile Styles (Breakpoint at 768px) */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1e293b;
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+        border-top: 1px solid #334155;
+      }
+
+      /* Show menu when checkbox is checked */
+      .menu-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+
+      /* Mobile sub-dropdown adjustments */
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background-color: #0f172a;
+        margin-top: 0.5rem;
+      }
+
+      /* Animate Hamburger to "X" */
+      .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+      }
+
+      .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+      }
+    }
+ /*==================   END HEADER (menu)  ================*/
+ /*=====================SECTION 1 SHOWCASE ===============*/
+
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: space-around;
-  padding: 40px 0;
-  width: 100%;   
-   background-color: azure;
-}
-.topbanner-text-container {
-  text-align: center;
-}
-.topbanner-text> div:first-child {
-  height: 360px;
-}
-.topbanner-text-image{
-  order: 2;
-  width: 45%;
-  max-width: 700px;
-  max-height: 600px;
-  background-size: cover;
-  background-position: center;
-}
-.topbanner-text-image{
-  order: 1;
+  gap: 2.5rem;
+  /*max-width: 1100px;*/
   width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
 }
-.topbanner-text-title{  
-  margin-bottom: 30px;
-  width: 600px;
-   width: 100%;
-  max-width: 600px;
-  padding-right: 30px;  
+
+.showcase-content h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
 }
-.topbanner-text-title h1{
- text-align: center;
+
+.showcase-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0;
 }
-.topbanner-text-body{
-  font: 400 15px/1.5 Montserrat, sans-serif;
-  margin-bottom: 40px; 
-  text-align: center; 
+
+.showcase-media {
+  width: 100%;
+  aspect-ratio: 16 / 12; /* Locks container proportions */
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #e2e8f0; /* Placeholder color while loading */
 }
-.button-topbanner {
-  font: 500 17px Montserrat, sans-serif;
-  background: #794654;
-  padding: 13px 25px;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s ease-out all;  
+
+.showcase-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops cleanly to fill the box without distortion */
+  display: block;
 }
-.button-topbanner:hover{
-  background: #a1475f;
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  background-color: #0066ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;  
 }
-@media screen and (max-width: 767px){
-  .topbanner-text {
-    display: block;
-    padding: 20px 0;
+
+/* Stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .showcase {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 0;
   }
-  .topbanner-text-image{
-    width: 80%;
-    display: block;
-    margin: auto;
-    background-size: cover;
-    background-position: center;
-  }
-  .topbanner-text-image{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 40px;
-  }  
-.topbanner-text-body{
-  padding-left: 20px;
-  padding-right: 20px;
 }
-.topbanner-text-title{
-  text-align: center; 
-}
-}
- /*=====================END TOP BANNER=============*/
+
+
+ /*==============  END SECTION 1 ShowCase =============*/
  /* ================END SHOWCASE================================================= */
-/*=================START  INTRO PARA ==========*/
-.pest-control-services {
+/*=================SECTIOLN 2  Text para with heading only  =========*/
+.text-para-heading {
   padding: 0;
   margin: 0 auto; 
   text-decoration: none;
   padding-bottom: 20px; 
 }
-.pest-control-services h3 { 
+.text-para-heading h3 { 
   text-decoration: none;
   /*font-size: 50px;*/ 
   margin-bottom: 0px; 
 }
-.pest-control-services h4 { 
+.text-para-heading h4 { 
   text-decoration: none;
   /*font-size: 26px;*/
    margin-bottom: 0px; 
 }
-.pest-control-services li{ 
+.text-para-heading li{ 
   margin-left: 20px;
   line-height: 2.5;    
   font-weight: 400;
@@ -327,30 +381,29 @@ align-items: start;
     }
 
 @media (max-width:1000px){
-.pest-control-services {
+.text-para-heading {
   padding: 0 5%; 
 }
 }
 @media (max-width:760px){  
-.pest-control-services {  
+.text-para-heading {  
   padding:0 30px 0 30px;
 }
-.pest-control-services h3 {  
+.text-para-heading h3 {  
   font-size: 26px; 
 }
-.pest-control-services h4 { 
+.text-para-heading h4 { 
     font-size: 24px;   
 }
-.pest-control-services li{ 
+.text-para-heading li{ 
      font-size:18px;
      margin-left: -20px;
      padding: 0;
      text-align: left;
 }
 }
-/*=================END  INTRO PARA ==========*/
-/*================ PEST MANAGEMENT==========================*/
-
+/*================= END SECTIOLN 2  Text para with heading only  ==========*/
+/*=============  SECTION 3 " Text+imge side by side" pest management  ========================*/
 .pest-text {
   display: flex;
   align-items: center;
@@ -438,83 +491,12 @@ padding-right: 20px;
   margin-left: 50px; 
 }
 }
-/*================  END PEST MANAGEMENT==========================*/
+/*=============  END  SECTION 3 " Text+imge side by side" pest management  ============*/
+  /*==========  SECTION 4 "headline image back =============== */
 
-  /* ================SECOND HEADLINE (not part of showcase)================================================= */
-.headline {
-  width: 100%;
-  height: 50vh;
-  min-height: 500px;
-  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7)), url("images/Bro Pest control ca.webp");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-    z-index: 1;
-    opacity: 0.8;
-background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover
-}
-@media only screen and (max-width: 980px) {
-.headline {
-    /* Prevents extreme image zooming on iOS/Android */
-    background-attachment: scroll; 
-    
-    /* Optional: Adjust height or focal point for vertical screens */
-    min-height: 45vh; 
-    background-position: center top; 
-  }
-}
-.headline{    
-  color:#ccc;
-}
-.headline h2{   
- width: 100%;
- padding: 0 20px 0 20px;
-   color:white;
-   font-weight:900;
-}
-.headline h3{   
- width: 100%;
-}
-.headline h4 a{   
-  padding-left: 10px;
-  padding-left: 10px;
-  text-decoration: none;
-  color: blue; 
-	width:100%;	
-}
-.headline a:hover{
-  cursor:pointer;
-  width:20%;
-  color: black;
-  background-color: #fff;
-  border: 2px solid #9b7a71;
-  border-radius: 5px;
-  text-shadow:0px 1px 1px #fff  
-}
-@media (max-width:760px)
-{  
-.headline a:hover{   
-  width:70%;
-}
-.headline{   
- min-height: 280px;
-}
-.headline h1{   
- padding: 0 25px 0 25px;
-}
-.headline h4{    
-  width: 100%;
- padding: 0 40px 0 40px;
-}
-}
- /* ================END   SECOND HEADLINE (not part of showcase)================================================= */
-/*==============  WHY YOU SELECT US  ======================*/
+ /* /*========== END SECTION 4 "headline image back =============== */
+ 
+/*=========== SECTION  5  "three text boxs under headline"===========*/
 .text-grid-heading{
   text-align: center;  
   margin-bottom:10px; 
@@ -603,8 +585,8 @@ background-attachment: fixed;
     width: 80%;
   }
 }
-/*===============  END WHY YOU SELECT US  =================*/
-/*================= CONTACT HEADING ===============*/
+/*======== END SECTION  5  "three text boxs under headline"============*/
+/*===============  SECTION 6  "phone+email+wapp three boxs with headline"==================*/
 .contact-headline {  
   display: grid;
   place-items: center; 
@@ -701,9 +683,9 @@ padding:5px 10px 5px 10px;
     width: 100%;
   }
 }
-/*==============  END CONTACT HEADING  =============*/
+/*=============== END  SECTION 6  "phone+email+wapp three boxs with headline"=======*/
 
-  /*===================== TYPES OF PESTS  ==================   */
+  /*====================  SECTION 7  "three pests grid boxs imge+text+bullets"   ==================   */
 .spsection{
   place-items: center;
   justify-items: center;
@@ -830,18 +812,13 @@ font-weight: 600;
   .pest {
     width: 80%;
   }
-
   .pest P{
     text-align: left;
     
   }
-
-
 }
- /*=====================  END TYPES OF PESTS  ==================   */
-
-
-/*=============== PEST ICONS    ==================*/
+ /*=================== END SECTION 7  "three pests grid boxs imge+text+bullets"  ============   */
+/*============ SECTION 8 "twelve boxs+pest icone heading top============*/
 .pest-grid-heading{
   text-align: center;  
   margin-bottom:10px; 
@@ -927,8 +904,8 @@ font-weight: 600;
     width: 100%;
   }
 }
-/*=============== PEST ICONS     ==================*/
-/* =============ASSOCIATION ============*/
+/*========== SECTION 8 "twelve boxs+pest icone heading top=================*/
+/* ==============SECTION 9  "Three images boxs for associations" ============*/
 .heading-asso {
   text-align: center;  
   margin-bottom:10px;
@@ -990,8 +967,8 @@ border: 2px solid black;
   gap: 20px;
 }
 }
-/* ============ END   ASSOCIATION ============*/
-/*===================== CONTACT FORM ==================   */
+/* ============ =SECTION 9  "Three images boxs for associations" ============*/
+/*=================SECTION 10  CONTACT FORM ==================   */
 /*---------contact heading start--------------*/  
 .heading-contact {
   text-align: center;  
@@ -1038,7 +1015,6 @@ border: 2px solid black;
 	-webkit-box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);
 	-moz-box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);
 	box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);
-
 }
 .form_container {
 	padding:15px;
@@ -1160,7 +1136,7 @@ border: 2px solid black;
 	float:none;   
 }
 .form_wrapper {
-	padding: 0 20px 0 20px;
+	padding: 0 20px 20px 20px;
 }
 
 .form_container {
@@ -1170,129 +1146,118 @@ border: 2px solid black;
 	margin:10px 0;
 }
 }
- /*=====================  END CONTACT ==================   */
+ /*=====================  END SECTION 10  CONTACT FORM==================   */
 /*================FOTTER=====================*/
-footer{
-  background-color:#153010;
-  width: 100%;
-  display: flex;
-  margin: 0;
-  padding: 0;     
+
+.site-footer {
+background-color:#153010;
+  color: #f8fafc;
+  padding: 3rem 1.5rem 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
 }
-.footer-container{
-    width: 80%;
-    margin: 0 auto;
-    padding-bottom: 30px;
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 }
-.row{
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: -50px;   
+.footer-col h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  margin-left: 2rem;
 }
-.box-top{
-    width: 80%;   
+.footer-col {   
+ width: 100%;
+ max-width: 30rem;
 }
-.inner-box ,
-.inner-box-top{
-    padding: 0.8rem;
-    color: #fff;
-    font-size: 14px;
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    word-spacing: 2px;
-    text-align: justify;
+.footer-col p {   
+  margin-left: 2rem;
 }
-.inner-box-top{
-  text-align: center; 
-  margin-top: 10px;
+.footer-col p,
+.footer-col li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5e1;
 }
-.inner-box-top a{    
-    line-height: 2;  
-    color: #fff;
-    text-decoration: none;
-    padding: 0;
-    margin: 16px;
-    font-size: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.footer-col ul {
+  list-style: none;
 }
-.link:hover {
-    color: red;
-    transition: 0.3s;
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-col a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+.footer-col a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.footer-bottom {
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+  padding-top: rem;
+  border-top: 1px solid #334155;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  padding-bottom: 2rem;
+}
+/* Stack columns into 1 column on mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
   }
-.box{
-    width: 25%;
-    height: 100%;
 }
-/*.inner-box p{
-   font-size: 14px;
-    text-align: left;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-}*/
-.inner-box h4{
-    color: #fff9;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.5rem;
-    text-align: justify;
-}
-.box{
-  width:;
-}
-.inner-box a{
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    padding-bottom:1rem;
-}
-.copyright{
-    display: block;
-    width: 100%;  
-    height: auto;
-    padding: 2rem 0; 
-    margin: 0; 
-    text-align: center;
-    font-size: 14px;
-    text-decoration: none;
-    word-spacing: 2px;
-    color: #fff;
-    clip-path: polygon(6% 0% , 94% 0% , 100% 100% , 0% 100%);
-}
-@media (max-width:991px){
+/*===============FOOTER=============================*/
 
-.footer-container{    
-    padding-bottom: 30px;
+.bottom-nav {
+  background-color:yellowgreen;
+  color: #cbd5e1;
+  font-family: system-ui, -apple-system, sans-serif; 
+  margin-bottom: 1.5rem;
+  width: 100%;
 }
-    .box{
-        width: 50%;
-        height: 100%;
-    }
+
+/* Optional Top Links Bar */
+.bottom-nav-container{
+  background-color: ; /* Slightly lighter shade for visual separation */
+  border-bottom: 6px solid black;
+  padding: 1rem 1.5rem;
 }
-@media (max-width:676px){
-    .box{
-        width: 100%;
-        height: 100%;
-    }
-    .inner-box-top{
-        text-align: start;
-    }
-    .box-top{
-        width: 100%;
-    }
-    .inner-box-top a{
-        display: block;
-        margin: 1rem 0;
-    }    
-.copyright{
-    padding: 0 20px 0 20px;
-   margin: 0 auto;
-   font-size: 12px;
-   line-height: 1.4;
+
+.bottom-nav-links{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 2.5rem;
 }
-}
-/*=========================================*/
+
+.bottom-nav-links li a{
+  color: blue;
+font-size: 1.5rem;
+font-weight: 600;
+border: 4px crimson; 
+ border: 2px solid green;   /* Width, style, and color */
+  padding: 8px 16px; 
 
 
-/* Top Banner Container */
-   
+}
+
+
+.bottom-nav-links a {
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.bottom-nav-linksa:hover {
+  color: red;
+}
