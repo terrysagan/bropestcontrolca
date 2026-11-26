@@ -10,6 +10,7 @@
   padding: 0;
   overflow-x: hidden;
     font-size: 16px;
+    scroll-behavior: smooth;
   }
 body {
  font-family: system-ui, -apple-system, sans-serif;
@@ -500,13 +501,22 @@ padding-right: 20px;
 .text-grid-heading{
   text-align: center;  
   margin-bottom:10px; 
+  background-color: #0066ff;
   }
 .text-grid-heading h3{
   text-align: center;
-  font-size: 30px;
- padding-left: 30px;
-  padding-right: 30px;
+  font-size: 36px;
+ padding: 20px 30px 0px 30px;
+ color: white;
 }
+
+.text-grid-heading h4{
+  text-align: center;
+  font-size: 30px;
+ padding: 0px 30px 20px 30px;
+ color: white;
+}
+
 .text-grid-heading p{
   text-align: center;
   font-size: 16px;
@@ -518,26 +528,26 @@ padding-right: 20px;
   flex-direction: row;
   justify-content: space-around;
   flex-flow: wrap; 
-  gap: 5px;
-  background-color:green;
+  gap: 5px;  
   padding-top: 30px; 
    margin-bottom: 30px; 
 }
 .text-subcontainer {
   width: 30%;
   background: #fff;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   margin-bottom: 50px;
   transition: 0.3s; 
   padding: 0px 5px;
   text-align: center;  
+  border: 2px solid darkgreen;
 }
 .pestimage {
   object-fit: cover;
   width:250px;
   height: 150px;
 }
-.text-subcontainer h4{ 
+.text-subcontainer h5{ 
   margin-top:20px;
   margin-bottom: 0px;
   color:darkgreen;  
@@ -553,9 +563,10 @@ padding-right: 20px;
   margin-top: 20px;
    margin-bottom: 10px;
   text-decoration: none;
-  padding: 5px 5px;
+  padding: 8px 8px;
   border-radius: 10px;
   font-size: 14px;
+  width: 30%;
 }
 .text-subcontainer:hover {
   transform: scale(1.05);
@@ -693,19 +704,22 @@ padding:5px 10px 5px 10px;
 .pestheading {
   text-align: center;  
   margin-bottom:10px;
+  background-color:#0066ff ;
+  width: 100%;
   } 
 .pestheading h3{
   text-align: center;
   /*font-size: 30px;*/
- padding-left: 30px;
+ padding: 20px 30px 0px 30px;
+ color: white;
   padding-right: 30px;
   margin: 0;
 }
 .pestheading p{
   text-align: center;
   /*font-size: 16px;*/
- padding-left: 30px;
-  padding-right: 30px;
+ padding: 0px 30px 20px 30px;
+ color: white;
 }
 .pestimage{
 width:100%;
@@ -822,18 +836,21 @@ font-weight: 600;
 .pest-grid-heading{
   text-align: center;  
   margin-bottom:10px; 
+  background-color:#0066ff;
   }
 .pest-grid-heading h3{
   text-align: center;
   font-size: 30px;
  padding-left: 30px;
   padding-right: 30px;
+  padding: 20px 30px 0 30px;
+  color: white;
 }
 .pest-grid-heading p{
   text-align: center;
   font-size: 16px;
- padding-left: 30px;
-  padding-right: 30px;
+padding: 0px 30px 20px 30px;
+color: white;
 }
 .pest-grid-container {
   display: flex;
@@ -905,7 +922,102 @@ font-weight: 600;
   }
 }
 /*========== SECTION 8 "twelve boxs+pest icone heading top=================*/
-/* ==============SECTION 9  "Three images boxs for associations" ============*/
+
+/*================SECTION 9"Boxes for links/pests etc"=====================*/
+
+.service-areas-heading{
+  text-align: center;  
+  margin-bottom:10px; 
+  background-color:#0066ff;
+  }
+.service-areas-heading h3{
+  text-align: center;
+  font-size: 30px;
+ padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  color: white;
+ 
+}
+
+
+.service-areas-heading p{
+  font-size: 24px;
+  text-align: center;
+  font-size: 16px;
+   padding-bottom: 20px;
+   color: white;
+ 
+}
+
+@media screen and (max-width: 620px) {
+ .service-areas-heading {
+    padding-left: 18px;
+    text-align: center;
+    }    
+  .service-areas-heading h3 {    
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }  
+  .pest-subcontainer {
+    width: 100%;
+  }
+}
+
+.service-areas-container {
+  display: flex;
+  flex-wrap: wrap;        /* Allows boxes to wrap onto new lines on small screens */
+  gap: 16px;              /* Adds clean spacing between boxes */
+  /*max-width: 1000px;*/
+  width: 100%;
+  margin: 0 auto;
+  
+}
+
+.location-box {
+  /* Grow: 1, Shrink: 1, Minimum width before wrapping: 250px */
+  flex: 1 1 250px;        
+  
+  /* Make the link behave like a styled card */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  color: #1a1a1a;
+  background-color: #f4f6f8;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 24px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  align-items: center;
+  border: 1px solid blue;      /* width, style, color */
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* Hover and keyboard focus states */
+.location-box:hover,
+.location-box:focus-visible {
+  background-color: #e2e8f0;
+  transform: translateY(-3px);
+  background: #a1475f;
+}
+
+.location-box h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.75rem;
+}
+
+.location-box h4 {
+  margin: 0;
+  color: darkgreen;
+  line-height: 1.4;
+}
+/*================END SECTION 9"Boxes for links/pests etc"=====================*/
+
+
+/* ==============SECTION 10  "Three images boxs for associations" ============*/
 .heading-asso {
   text-align: center;  
   margin-bottom:10px;
@@ -967,8 +1079,8 @@ border: 2px solid black;
   gap: 20px;
 }
 }
-/* ============ =SECTION 9  "Three images boxs for associations" ============*/
-/*=================SECTION 10  CONTACT FORM ==================   */
+/* ============ =SECTION 10  "Three images boxs for associations" ============*/
+/*=================SECTION 11  CONTACT FORM ==================   */
 /*---------contact heading start--------------*/  
 .heading-contact {
   text-align: center;  
@@ -1147,6 +1259,7 @@ border: 2px solid black;
 }
 }
  /*=====================  END SECTION 10  CONTACT FORM==================   */
+ 
 /*================FOTTER=====================*/
 
 .site-footer {
@@ -1212,52 +1325,48 @@ background-color:#153010;
   }
 }
 /*===============FOOTER=============================*/
-
-.bottom-nav {
-  background-color:yellowgreen;
-  color: #cbd5e1;
-  font-family: system-ui, -apple-system, sans-serif; 
-  margin-bottom: 1.5rem;
-  width: 100%;
-}
-
-/* Optional Top Links Bar */
-.bottom-nav-container{
-  background-color: ; /* Slightly lighter shade for visual separation */
-  border-bottom: 6px solid black;
-  padding: 1rem 1.5rem;
-}
-
-.bottom-nav-links{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
+/* Outer Flex Container */
+.social-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem 2.5rem;
+  flex-wrap: wrap;          /* Allows boxes to wrap onto new lines on smaller screens */
+  justify-content: center;  /* Centers the boxes horizontally */
+  gap: 16px;                /* Adds even spacing between boxes */
+  padding: 24px;
 }
 
-.bottom-nav-links li a{
-  color: blue;
-font-size: 1.5rem;
-font-weight: 600;
-border: 4px crimson; 
- border: 2px solid green;   /* Width, style, and color */
-  padding: 8px 16px; 
-
-
-}
-
-
-.bottom-nav-links a {
-  color: #f8fafc;
+/* Inner Flex Box (Link + Image) */
+.social-card {
+  display: flex;
+  flex-direction: column;   /* Stacks image above text (use 'row' for side-by-side) */
+  align-items: center;      /* Centers content horizontally */
+  justify-content: center;  /* Centers content vertically */
+  width: 140px;
+  padding: 16px;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  color: #222;
+  background-color: #f4f4f6;
+  border-radius: 12px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.bottom-nav-linksa:hover {
-  color: red;
+.social-card:hover {
+  transform: translateY(-4px);
+  background-color: #e4e4e9;
 }
+
+/* Downloaded Image Sizing */
+.social-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;      /* Prevents downloaded images from stretching or distorting */
+  margin-bottom: 10px;
+}
+
+.social-card span {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/*ccccccccccccccccccccccccccccccccccccccccccccccccc*/
