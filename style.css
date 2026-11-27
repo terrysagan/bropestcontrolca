@@ -37,6 +37,15 @@ main {
     margin-left: 0;
     margin-right: 0;
   }
+
+main {
+  
+  
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
 }
 
 h1 { font-size: 42px;
@@ -302,7 +311,7 @@ margin-left: 20px;
   /*max-width: 1100px;*/
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding-top: .75rem;
   font-family: system-ui, sans-serif;
 }
 
@@ -712,7 +721,7 @@ padding:5px 10px 5px 10px;
   background-color:#0066ff ;
   width: 100%;
   } 
-.pestheading h3{
+.pestheading  h3{
   text-align: center;
   /*font-size: 30px;*/
  padding: 20px 30px 0px 30px;
@@ -745,7 +754,7 @@ height:auo;
   flex-flow: wrap;  
 }
 .pest {
-  width: 45%;
+  width: 32%;
   background: #fff;
   border: 1px solid #ccc;
   margin-bottom: 50px; 
@@ -806,7 +815,10 @@ margin-left: 20px;
 }*/
 @media screen and (max-width: 1000px) {
   .pest {
-    width: 40%;
+    width: 48%;
+  }
+   .pest p{
+    padding-right: 20px;
   }
 }
 @media screen and (max-width: 860px) {
@@ -876,7 +888,7 @@ color: white;
   border: 1px solid black;
 }
 
-.pest-subcontainer imge {
+.pest-subcontainer img {
   max-width: 100%;
   height: auto;
 }
@@ -1040,17 +1052,17 @@ color: white;
 .heading-asso h3{
   text-align: center;
   /*font-size: 30px;*/
- padding-left: 30px;
-  padding-right: 30px;
+ padding-left: 10px;
+  padding-right: 10px;
   margin: 0;
 }
 .heading-asso p{
   text-align: center;
   /*font-size: 16px;*/
- padding-left: 30px;
-  padding-right: 30px;
+ padding-left: 10px;
+  padding-right: 10px;
 }
-@media screen and (max-width: 620px) { 
+@media screen and (max-width: 768px) { 
   .heading-asso {
     padding-left: 18px;
     text-align: center;
@@ -1060,6 +1072,19 @@ color: white;
     padding-left: 20px;
     padding-right: 20px;
   } 
+
+.heading-asso h3{
+  text-align: left;
+ padding-left: 0px;
+  padding-right: 0px;
+
+}
+.heading-asso p{
+ text-align: left;
+ padding-left: 0px;
+  padding-right: 00px;
+}
+
 }
 .cards {  
   display: flex; 
