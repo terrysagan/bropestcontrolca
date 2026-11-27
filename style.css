@@ -1,6 +1,8 @@
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Keeps padding/borders inside the element's width */
+  margin: 0;
+  padding: 0;
 }
 
   html
@@ -13,31 +15,30 @@
     scroll-behavior: smooth;
   }
 body {
- font-family: system-ui, -apple-system, sans-serif;
-  margin: 0px;
-  padding: 0px;
+ font-family: system-ui, -apple-system, sans-serif;  
   min-height: 100vh; 
   box-sizing: border-box; 
+ 
 
-      padding: 1.25rem; 
+}
+main {
+  width: 100%;          /* Takes up 90% of the screen on mobile */
+  max-width: 1280px;    /* Caps the width at 960px on larger screens */
+  margin: 0 auto;      /* Centers the <main> element horizontally */
+  padding-right: 30px;
+  padding-left: 30px;
+}
 
+@media (max-width: 768px) {
+  /* Target common block elements and containers */
+  div, section, article, aside, header, footer,  nav, form {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
-.main{
-  max-width: 1240px; /* Limits total width */
-  margin: 0 auto;    /* Centers the content horizontally */
-  width: 100%;  
-}
-section{
-  max-width: 1260px; /* Limits total width */
-  margin: 0 auto;    /* Centers the content horizontally */
-  width: 100%; 
-     
-}
-@media screen (max-width:768px){
-    section{
-        padding: 0px 20px 0px 20px; 
-    }    
-}
+
 h1 { font-size: 42px;
   font-weight: 900; 
 line-height: 2;}
@@ -293,8 +294,6 @@ margin-left: 20px;
     }
  /*==================   END HEADER (menu)  ================*/
  /*=====================SECTION 1 SHOWCASE ===============*/
-
-
 .showcase {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -329,8 +328,8 @@ margin-left: 20px;
 }
 
 .showcase-media img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   object-fit: cover; /* Crops cleanly to fill the box without distortion */
   display: block;
 }
@@ -353,10 +352,8 @@ margin-left: 20px;
     margin-top: 0;
   }
 }
-
-
  /*==============  END SECTION 1 ShowCase =============*/
- /* ================END SHOWCASE================================================= */
+
 /*=================SECTIOLN 2  Text para with heading only  =========*/
 .text-para-heading {
   padding: 0;
@@ -420,6 +417,8 @@ margin-left: 20px;
   max-width: 500px;
   background-size: cover;
   background-position: center;
+  max-width: 100%;
+  height: auto;
 }
 .pest-text-image{
   order: 1;
@@ -493,11 +492,10 @@ padding-right: 20px;
 }
 }
 /*=============  END  SECTION 3 " Text+imge side by side" pest management  ============*/
-  /*==========  SECTION 4 "headline image back =============== */
-
- /* /*========== END SECTION 4 "headline image back =============== */
  
-/*=========== SECTION  5  "three text boxs under headline"===========*/
+/*=========== SECTION  4  "three text boxs under headline"===========*/
+
+
 .text-grid-heading{
   text-align: center;  
   margin-bottom:10px; 
@@ -532,6 +530,8 @@ padding-right: 20px;
   padding-top: 30px; 
    margin-bottom: 30px; 
 }
+
+
 .text-subcontainer {
   width: 30%;
   background: #fff;
@@ -596,8 +596,8 @@ padding-right: 20px;
     width: 80%;
   }
 }
-/*======== END SECTION  5  "three text boxs under headline"============*/
-/*===============  SECTION 6  "phone+email+wapp three boxs with headline"==================*/
+/*======== END SECTION 4  "three text boxs under headline"============*/
+/*===============  SECTION 5  "phone+email+wapp three boxs with headline"==================*/
 .contact-headline {  
   display: grid;
   place-items: center; 
@@ -627,13 +627,15 @@ padding-right: 20px;
   align-items: center;
   margin: 10px 40px 10px 40px;
 }
+
 .contact-headline-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: ;
   justify-content: space-around;
+  align-items: center;
   flex-flow: wrap; 
   gap: 5px;
-  margin: 20px 40px 0 40px; 
+  margin: 20px 0 40px 0; 
 }
 .headline-subcontainer {
   width: 30%;
@@ -651,6 +653,8 @@ padding-right: 20px;
   width:60px;
   height: 60px;
   margin-top: 10px;
+  max-width: 100%;
+  height: auto;
 }
 .headline-subcontainer h5{ 
   margin-top:10px;  
@@ -694,12 +698,13 @@ padding:5px 10px 5px 10px;
     width: 100%;
   }
 }
-/*=============== END  SECTION 6  "phone+email+wapp three boxs with headline"=======*/
+/*=============== END  SECTION 5  "phone+email+wapp three boxs with headline"=======*/
 
-  /*====================  SECTION 7  "three pests grid boxs imge+text+bullets"   ==================   */
+  /*====================  SECTION 6  "three pests grid boxs imge+text+bullets"   ==================   */
 .spsection{
   place-items: center;
   justify-items: center;
+  width: auto;
   }   
 .pestheading {
   text-align: center;  
@@ -727,14 +732,11 @@ object-fit: contain;
 max-width: 200px;
 padding-top: 10px;
 padding-bottom: 12px;
+
 }
 .pestheader{
-width: 20%;      /* Or any width you prefer */
-  max-width: 300px; /* Optional: sets a cap on size */
-}
-.pestheader img{
-width: 20%;      /* Or any width you prefer */
-  max-width: 300px; /* Optional: sets a cap on size */
+max-width: 100%;
+height:auo;    
 }
 .pest-subheading {
   display: flex;
@@ -743,7 +745,7 @@ width: 20%;      /* Or any width you prefer */
   flex-flow: wrap;  
 }
 .pest {
-  width: 33%;
+  width: 45%;
   background: #fff;
   border: 1px solid #ccc;
   margin-bottom: 50px; 
@@ -759,6 +761,7 @@ text-align: justify;
 text-align: left;
 line-height: 1.8;
 font-weight: 600;
+margin-left: 20px;
 }
 .pest-header {
   text-align: center;
@@ -777,6 +780,7 @@ font-weight: 600;
 .pest-body {
   padding: 0px 5px;
   text-align: center; 
+  margin: 0 20px 0 20px;
 }
 .pest-body h4{ 
   margin-top:5px;
@@ -831,8 +835,8 @@ font-weight: 600;
     
   }
 }
- /*=================== END SECTION 7  "three pests grid boxs imge+text+bullets"  ============   */
-/*============ SECTION 8 "twelve boxs+pest icone heading top============*/
+ /*=================== END SECTION 6  "three pests grid boxs imge+text+bullets"  ============   */
+/*============ SECTION 7 "twelve boxs+pest icone heading top============*/
 .pest-grid-heading{
   text-align: center;  
   margin-bottom:10px; 
@@ -858,7 +862,7 @@ color: white;
   justify-content: space-around;
   flex-flow: wrap; 
   gap: 5px;
-  margin: 0px 40px 0 40px; 
+  margin: 20px 0px 40px 0px; 
 }
 .pest-subcontainer {
   width: 15%;
@@ -870,6 +874,11 @@ color: white;
   padding: 0px 5px;
   text-align: center;
   border: 1px solid black;
+}
+
+.pest-subcontainer imge {
+  max-width: 100%;
+  height: auto;
 }
 .pest-gridimage {
   object-fit: cover;
@@ -902,7 +911,8 @@ color: white;
     width: 40%;
   }
 }
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 768px) {
+  
   .pest-subcontainer {
     width: 42%;
   }
@@ -921,9 +931,9 @@ color: white;
     width: 100%;
   }
 }
-/*========== SECTION 8 "twelve boxs+pest icone heading top=================*/
+/*========== END SECTION 7 "twelve boxs+pest icone heading top=================*/
 
-/*================SECTION 9"Boxes for links/pests etc"=====================*/
+/*================SECTION 8"Boxes for links/pests etc"=====================*/
 
 .service-areas-heading{
   text-align: center;  
@@ -1014,17 +1024,17 @@ color: white;
   color: darkgreen;
   line-height: 1.4;
 }
-/*================END SECTION 9"Boxes for links/pests etc"=====================*/
+/*================END SECTION 8"Boxes for links/pests etc"=====================*/
 
 
-/* ==============SECTION 10  "Three images boxs for associations" ============*/
+/* ==============SECTION 9  "Three images boxs for associations" ============*/
 .heading-asso {
   text-align: center;  
   margin-bottom:10px;
   }
    
 .cards .card img{
-  width: 250px;
+  width: 100%;
   height: auto;
   } 
 .heading-asso h3{
@@ -1079,8 +1089,9 @@ border: 2px solid black;
   gap: 20px;
 }
 }
-/* ============ =SECTION 10  "Three images boxs for associations" ============*/
-/*=================SECTION 11  CONTACT FORM ==================   */
+/* ============ =SECTION 9  "Three images boxs for associations" ============*/
+
+/*=================SECTION 10  CONTACT FORM ==================   */
 /*---------contact heading start--------------*/  
 .heading-contact {
   text-align: center;  
@@ -1258,7 +1269,7 @@ border: 2px solid black;
 	margin:10px 0;
 }
 }
- /*=====================  END SECTION 10  CONTACT FORM==================   */
+ /*=====================  END SECTION 9  CONTACT FORM==================   */
  
 /*================FOTTER=====================*/
 
