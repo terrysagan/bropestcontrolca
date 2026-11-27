@@ -1034,9 +1034,8 @@ color: white;
   }
    
 .cards .card img{
-  max-width: 100%;
+  width: 100%;
   height: auto;
-	aspect-ratio: 16 / 9;
   } 
 .heading-asso h3{
   text-align: center;
@@ -1074,6 +1073,17 @@ color: white;
 height: auto;
 margin: auto; 
 border: 2px solid black;
+}
+
+.cards .card imge{
+ max-width: 100%;
+  max-height: auto;
+  aspect-ratio: 16/9;  
+}
+
+.card-imge{
+ max-width: 300px;
+  max-height: 100px;  
 }
 @media (max-width:876px){ 
 .cards {   
